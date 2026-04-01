@@ -27,9 +27,24 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center pt-24 px-6 overflow-hidden"
     >
-      {/* 🌌 Dynamic "Cyber Nebula" Background Animation */}
-      <div className="absolute inset-0 z-0">
-        <ParticlesBackground />
+      {/* 🌌 Dynamic Background: Video + "Cyber Nebula" */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-50"
+        >
+          <source src="/new.mp4" type="video/mp4" />
+        </video>
+        {/* Gradients and Overlays for depth and readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/60 to-background z-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)] z-10" />
+        
+        <div className="relative z-20 h-full w-full">
+          <ParticlesBackground />
+        </div>
       </div>
 
       {/* 🕸️ Subtle Decorative Grid (at the back) */}
